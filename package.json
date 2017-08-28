@@ -1,0 +1,24 @@
+{
+  "name": "testbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "botbuilder": "file:///Users/bill/Dropbox/billba-mbp/SDKv4/js/core",
+    "botbuilder-ai": "file:///Users/bill/Dropbox/billba-mbp/SDKv4/js/ai",
+    "botbuilder-prompts": "file:///Users/bill/Dropbox/billba-mbp/SDKv4/js/prompts",
+    "botbuilder-router": "file:///Users/bill/Dropbox/billba-mbp/SDKv4/js/router",
+    "botbuilder-services": "file:///Users/bill/Dropbox/billba-mbp/SDKv4/js/services",
+    "convert-units": "^2.3.1",
+    "longest-common-substring": "0.0.1",
+    "restify": "^5.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^2.4.2"
+  }
+}

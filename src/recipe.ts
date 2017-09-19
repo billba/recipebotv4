@@ -33,6 +33,39 @@ export interface NutritionInformation {
     unsaturatedFatContent: number
 }
 
+export const recipes: Partial<Recipe>[] = [
+    {
+      "name" : "Victoria Sponge",
+      "prepTime" : "PT30M",
+      "cookTime" : "PT30M",
+      "recipeYield" : "Makes 12 slices",
+      "description" : "This simplest of sponge cake recipes has a fresh berry and whipped cream filling that takes the classic Victoria sponge to new heights.",
+      "recipeIngredient" : [
+        "25g/8oz butter or margarine, softened at room temperature",
+        "225g/8oz caster sugar",
+        "4 medium eggs",
+        "2 tsp vanilla extract",
+        "225g/8oz self raising flour",
+        "milk, to loosen"
+      ],
+      "recipeInstructions" : [
+        "Preheat the oven to 180C/350F/Gas 4.",
+        "Grease and line 2 x 18cm/7in cake tins with baking paper.",
+        "Cream the butter and the sugar together in a bowl until pale and fluffy.",
+        "Beat in the eggs, a little at a time, and stir in the vanilla extract.",
+        "Fold in the flour using a large metal spoon, adding a little extra milk if necessary, to create a batter with a soft dropping consistency.",
+        "Divide the mixture between the cake tins and gently spread out with a spatula.",
+        "Bake for 20-25 minutes, or until golden-brown on top and a skewer inserted into the middle comes out clean.",
+        "Remove from the oven and set aside for 5 minutes, then remove from the tin and peel off the paper. Place onto a wire rack.",
+        "Sandwich the cakes together with jam, lemon curd or whipped cream and berries or just enjoy on its own."
+      ]
+    }
+  ];
+
+export const recipeFromName = (name: string) =>
+    recipes.find(recipe => recipe.name.toLowerCase() === name.toLowerCase());
+
+/*
 
 const chooseRecipe: Handler<R & IRegExpMatch> = match => {
     const name = match.groups[1];
@@ -96,33 +129,6 @@ const sayInstruction: Handler<R & { instruction: number }> = match => {
 
 // const globalDefaultRule = defaultRule(reply("I can't understand you. It's you, not me. Get it together and try again."));
 
-const recipeFromName = (name: string) =>
-    recipes.find(recipe => recipe.name.toLowerCase() === name.toLowerCase());
-
-const filters: {
-    [index: string]: Predicate<R>
-} = {
-    noRecipe: match => !match.data.userInConversation.recipe,
-    noInstructionsSent: match => match.data.userInConversation.lastInstructionSent === undefined,
-}
-
-// RegExp
-
-const intents = {
-    instructions: {
-        start: /(Let's start|Start|Let's Go|Go|I'm ready|Ready|OK|Okay)\.*/i,
-        next: /(Next|What's next|next up|OK|okay|Go|Continue)/i,
-        previous: /(go back|back up|previous)/i,
-        repeat: /(what's that again|huh|say that again|please repeat that|repeat that|repeat)/i,
-        restart: /(start over|start again|restart)/i
-    },
-    chooseRecipe: /I want to make (?:|a|some)*\s*(.+)/i,
-    queryQuantity: /how (?:many|much) (.+)/i,
-    askQuestion: /ask/i,
-    askYorNQuestion: /yorn/i,
-    askChoiceQuestion: /choice/i,
-    all: /(.*)/i
-}
 
 // LUIS
 
@@ -187,3 +193,4 @@ const recipeRule = first<R>(
 recipeBotChat.run({
     message: recipeRule
 });
+*/
